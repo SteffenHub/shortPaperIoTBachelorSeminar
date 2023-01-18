@@ -53,26 +53,26 @@
 \end{abstract}
 
 \section{INTRODUCTION}
-    \noindent IoT is continually evolving. The opportunities seem infinite. It could provide a global computing network where everything and everyone connects to the Internet. The number of devices availing of internet services is increasing every day. The approach of IoT is converging data obtained from different kinds of things to any virtual platform on existing Internet infrastructure.
-
+    \noindent IoT is continually evolving. The opportunities seem infinite. It could provide a global computing network where everything and everyone connects to the Internet. The number of devices availing of internet services is increasing every day.
+    
     The first IoT device dates back to 1982. A modified coke machine was competent to report the drinks contained and whether the drinks were cold by communicating through the Internet\cite{CokeMachine}.
     
-    The basic idea of IoT is to allow an autonomous exchange of valuable information between invisibly embedded different uniquely identifiable real-world devices around us, fueled by the leading technologies like Radio-Frequency Identification (RFID) and Wireless Sensor Networks (WSNs) which are sensed by the sensor devices and further processed for decision making, based on which an automated action is performed.
+    The basic idea of IoT is to allow an autonomous exchange of information between embedded different real-world devices around us, using leading technologies like Wireless Sensor Networks (WSNs) and Radio-Frequency Identification (RFID) which are sensed by the sensor devices and further processed for decision making, based on which an automated action is performed.
     
 \section{ARCHITECTURE}
-    \noindent The existing architecture of the Internet with TCP/ IP protocols cannot handle a network as extensive as IoT. For this issue, there is a need for a new open architecture. This architecture should ensure security and Quality of Service (QoS). Without proper privacy assurance, IoT is not likely to be adopted by many. \cite{ArchitectureIoT} proposed a six-layered architecture divided into the six layers shown in Figure 1. This section will present the six layers of the IoT architecture.
+    \noindent The existing architecture of the Internet with TCP/ IP protocols cannot handle a network as extensive as IoT. So there is a need for a new open architecture, that can handle this issue. This architecture should ensure security and Quality of Service (QoS). Without suitable data protection, IoT will not be adopted by many. \cite{ArchitectureIoT} proposed a six-layered architecture divided into the six layers shown in Figure 1. This section will present the six layers of the IoT architecture.
     \subsection{Coding Layer}
         \noindent In this layer, each object gets its unique ID to provide an easy discern \cite{ArchitectureIoT}.        
     \subsection{Perception Layer}
-        \noindent This layer consists of data sensors like RFID Tags, IR Sensors, etc. This could sense the temperature, humidity, location, etc. It converts the sensor data into a digital signal and passes it onto the Network Layer for further action.
+        \noindent This layer consists of data sensors like RFID Tags, IR Sensors, etc. Which could sense the temperature, humidity, location, etc. It passes the sensor data onto the Network Layer for further action by converting it into a digital signal.
     \subsection{Network Layer}
-        \noindent This layer receives the information as digital signals from the Perception layer and transmits it to the Middleware layer through transmission mediums like WiFi, Bluetooth, 3G, etc. protocols like IPV4, IPV6, etc. are used for this.
+        \noindent This layer receives digital signals from the Perception layer with the given information in it. The Network layer's job is to transmit this information to the Middleware layer. For this job, there are used transmission mediums like Bluetooth, WiFi, 3G, etc. with fitting protocols like IPV6, IPV4, etc.
     \subsection{Middleware Layer}
-        \noindent This layer processes the information provided by the Perception layer through the Network layer. It includes technologies like Cloud computing with direct access to a database to store the data. In some Intelligent Processing Equipment, based on the information a fully automated action is taken based on the processed results of the information.
+        \noindent This layer processes the information provided by the Perception layer through the Network layer. It includes technologies like Cloud computing with direct access to a database to store the data. In some Intelligent Processing Equipment, based on the processed results of the information a fully automated action is taken.
     \subsection{Application Layer}
-        \noindent This layer realizes the applications of IoT With the processed data. The IoT-related applications could be smart homes, transportation, planet, etc.
+        \noindent With the processed data this layer holds the bandwidth of applications of IoT. The IoT-related applications could be smart homes, transportation, planet, etc.
     \subsection{Business Layer}
-        \noindent This layer manages the applications and services of IoT.
+        \noindent This layer combines the applications and services of IoT by managing and merging them to provide different business models.
     \begin{figure}
         \centering
         \begin{tikzpicture}
