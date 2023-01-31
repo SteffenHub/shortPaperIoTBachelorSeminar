@@ -1,0 +1,238 @@
+% !TEX program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !TEX spellcheck = de_DE
+
+% --------------------------------------------------------------------------- %
+% Poster template for Institute of Telematics.      						  %
+% --------------------------------------------------------------------------- %
+% Created with Brian Amberg's LaTeX Poster Template. Please refer for the     %
+% attached README.md file for the details how to compile.				      %
+% --------------------------------------------------------------------------- %
+% $LastChangedDate:: 2017-08-03 18:00:00 +0200 (V, 12 szept. 2017)          $ %
+% $LastChangedRevision:: 129                                                $ %
+% $LastChangedBy:: allner                                                   $ %
+% $Id:: poster.tex 128 2011-09-11 08:57:12Z rlegendi                        $ %
+% --------------------------------------------------------------------------- %
+
+
+\documentclass[a0paper,portrait]{baposter}
+
+\usepackage[utf8]{inputenc}
+\usepackage{relsize}		% For \smaller
+\usepackage{url}			% For \url
+\usepackage{epstopdf}	% Included EPS files automatically converted to PDF to include with pdflatex
+\usepackage{verbatimbox}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{uzlcolor}
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+%tikz
+\usepackage{tikz}
+
+
+
+%%% Myriad Pro Font - %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+%\setmonofont{Myriad Pro}
+\setmainfont[
+Path=MyriadPro/,
+BoldFont={MYRIADPRO-BOLD.OTF}, 
+ItalicFont={MYRIADPRO-COND.OTF},
+BoldItalicFont={MyriadPro-Light.otf}
+]{MYRIADPRO-REGULAR.OTF}
+%\setsansfont{Myriad Pro}
+
+
+
+%%% Global Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{pix/}}	% Root directory of the pictures 
+\tracingstats=2			% Enabled LaTeX logging with conditionals
+
+\newcommand{\localtextbulletone}{\textcolor{uzl_orange_2}{\raisebox{0.2ex}{\rule{1.2ex}{1.2ex}}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Utility functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Save space in lists. Use this after the opening of the list %%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{
+	\setlength{\itemsep}{1pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Document Start %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\input{verbatims}
+
+\typeout{Poster rendering started}
+
+%%% Setting Background Image %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\background{
+% 	\begin{tikzpicture}[remember picture,overlay]%
+% 	\draw (current page.north west)+(-2em,2em) node[anchor=north west]
+% 	{\includegraphics[height=1.1\textheight]{background}};
+% 	\end{tikzpicture}
+}
+
+%%% General Poster Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Eye Catcher, Title, Authors and University Images %%%%%%%%%%%%%%%%%%%%%%
+\begin{poster}{
+	grid=false,
+	% Option is left on true though the eyecatcher is not used. The reason is
+	% that we have a bit nicer looking title and author formatting in the headercol
+	% this way
+	eyecatcher=false, 
+	borderColor=uzl_oceangreen_80,
+	headerColorOne=uzl_oceangreen_80,
+	headerColorTwo=uzl_oceangreen_80,
+	headerFontColor=white,
+	% Only simple background color used, no shading, so boxColorTwo isn't necessary
+	boxColorOne=white,
+	% rectangle small-rounded roundedright roundedleft rounded
+	headershape=rectangle,
+	headerfont=\large\bf,
+	% none bars coils triangles rectangle rounded faded
+	textborder=roundedsmall,
+	background=plain,
+	bgColorOne=white,
+	% none closed open
+	headerborder=open,
+	% plain shade-lr shade-tb none
+	boxshade=plain,
+	%Number of columns (default 4 in landscape and 3 in portrait format) (maximumnumber is 6)
+	%colspacing=length
+	columns=3,
+	linewidth=1pt,
+	% plain shade-lr shade-tb shade-tb-inverse
+	headershade=plain
+}
+%%% Eye Cacther %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+%  \includegraphics[height=5em]{qrcode}
+%  \hspace{0.7cm}
+}
+%%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+	\vspace{0.3cm}
+  \textcolor{uzl_oceangreen_80}{\textbf{A Review on Internet of Things (IoT)}}
+    \vspace{0.3cm}
+}
+%%% Subtitle %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+  \textcolor{uzl_orange_2}{\textsf{Zusammenfassung der Arbeit mit demselben Namen von M.U. Farooq, Muhammad Waseem, Sadia Mazhar, Anjum Khairi, Talha Kamal \cite{AReViewOnInternetOfThings}}}
+}
+%%% Logo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+  \hspace{1cm}
+  \includegraphics[height=8em]{Logo_Inst_Telematik_orig}
+}
+
+%%% Header %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{}{name=headtext, column=0, span=3, textborder=none, headerborder=none, boxheaderheight=0pt, boxColorOne=uzl_oceangreen_80}{
+  \vspace{0.10cm}
+    \textcolor{white}{\textsf{\large{Steffen Marbach  \hfill - \hfill Universität zu Lübeck \hfill - \hfill Institut für Telematik \hfill - \hfill Email: steffen.marbach@student.uni-luebeck.de}}}
+  \vspace{0.10cm}
+}
+
+
+%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{ABSTRACT}{name=abstract, column=0, span=1, row=0, below=headtext}{
+    \vspace{0.5em}
+        Zurzeit kommunizieren wir entweder von Mensch zu Mensch oder Mensch zu einer Maschine. Das Internet der Dinge (IoT) verändert die Kommunikation um Maschine zu Maschine (M2M). Dieses Poster bietet eine sechsschichtige Architektur des IoT und erörtert die damit verbundenen wichtigen Herausforderungen und Sicherheitsbedrohungen.
+    \vspace{0.5em}
+}
+
+%%% Architecture %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{\textsf{ARCHITECTURE}}{name=architecture,column=1, span=2, below=headtext}{
+    \vspace{0.5em}
+    Die vorhandene Architektur des Internets mit TCP/ IP -Protokollen kann ein Netzwerk, so umfangreich wie IoT nicht verarbeiten. Um dieses Problem zu lösen, ist eine neue offene Architektur erforderlich. Diese Architektur sollte security und Quality of Service (QoS) gewährleisten. Ohne geeigneten Datenschutz wird IoT von vielen nicht angenommen. \cite{ArchitectureIoT} schlug eine sechsschichtige Architektur vor, die in der Abbildung sechs gezeigten Schichten unterteilt ist. In diesem Abschnitt werden die sechs Schichten der IoT-Architektur vorgestellt.
+    \begin{itemize}[leftmargin=5.5mm, rightmargin=5.5mm]
+        \item \textbf{Coding Layer:} In dieser Schicht erhält jedes Objekt seine eindeutige ID, um eine einfache Unterscheidung zu bieten\cite{ArchitectureIoT}.
+        \item \textbf{Perception Layer:} Diese Schicht besteht aus Datensensoren wie RFID -Tags, IR -Sensoren usw., die Temperatur, Luftfeuchtigkeit, Standort usw. erkennen können. Sie übergibt die Sensordaten auf den Network Layer, um sie in weiteren Aktionen in ein digitales Signal umzuwandeln.
+        \item \textbf{Network Layer:} Diese Schicht empfängt digitale Signale aus dem Perception Layer. Die Aufgabe der Netzwerkschicht besteht darin, diese Informationen an das Middleware Layer zu übertragen. Für diese Aufgabe werden Übertragungs Medien wie Bluetooth, WLAN, 3G usw. mit Anpassungsprotokollen wie IPv6, IPv4 usw verwendet.
+        \item \textbf{Middleware Layer:} Diese Schicht verarbeitet die Informationen, die im Perception Layer über das Network Layer bereitstellt. Es enthält Technologien wie Cloud Computing mit direktem Zugriff auf eine Datenbank, um die Daten zu speichern. Mit den verarbeiteten Informationen wird vollautomatische Maßnahmen ergriffen.
+        \item \textbf{Application Layer:} Mit den verarbeiteten Daten enthält diese Schicht die Bandbreite an Anwendungen von IoT. Die IoT-bezogenen Anwendungen können Smart Homes, Smart Transport, Smart Planet usw. sein.
+        \item \textbf{Business Layer:} Diese Schicht kombiniert die Anwendungen und Dienste von IoT, indem sie diese verwaltet und zusammenführt, um verschiedene Geschäftsmodelle bereitzustellen.
+    \end{itemize}
+    \vspace{0.5em}
+}
+
+%%% Applications %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{\textsf{APPLICATIONS}}{name=applications, column=2, span=1, below=architecture}{
+	
+    \vspace{0.5em}
+    Mehrere mögliche zukünftige Anwendungen können von großem Vorteil sein, wie intelligente Krankenhäuser, intelligente Landwirtschaft, intelligente Verkehrssysteme usw. In diesem Abschnitt stellen wir zwei davon kurz vor:
+    \begin{itemize}[leftmargin=5.5mm, rightmargin=5.5mm]
+        \item \textbf{Smart Environment:} IoT wird Naturkatastrophen wie Überschwemmungen, Brände, Erdbeben usw. vorhersagen können. Außerdem kann z.B. die Luftverschmutzung in der Umwelt ordnungsgemäß Überwacht werden.
+        \item \textbf{Smart Home:} IoT bietet Lösungen für die Heimautomatisierung. Wir könnten unsere Geräte aus der Ferne steuern, die Versorgungszähler, die Energie und die Wasserversorgung überwachen, um Ressourcen zu sparen, und ein Eingriffserkennungssystem aufbauen, das Einbrüche verhindern könnte. Außerdem können Gartensensoren Licht, Luftfeuchtigkeit, Temperatur und andere Garten Werte messen. IoT konnte Pflanzen ihren Bedürfnissen entsprechend gießen.
+    \end{itemize}
+    \vspace{0.1em}
+}
+
+
+%%% Security %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{\textsf{SECURITY AND PRIVACY}}{name=security, column=0, span=2, below=architecture}{
+    \vspace{0.5em}
+    IoT macht alles und auch Personen lokalisierbar und adressierbar. Daher muss IoT eine robuste Sicherheitsinfrastruktur haben. In diesem Abschnitt werden einige der möglichen IoT-bezogenen Probleme vorgestellt.
+    \begin{itemize}[leftmargin=5.5mm, rightmargin=5.5mm]
+    \item \textbf{Unauthorized Access to RFID:} Der unbefugte Zugriff auf Tags ist ein grundlegendes Thema. Einige reale Bedrohungen durch RFID sind RFID-Viren, Nebenkanalangriffe mit einem Handy und SpeedPass-Hack.
+    \item \textbf{Sensor-Nodes Security Breach:} WSNs sind anfällig für Angriffe, da Sensorknoten Teil eines bidirektionalen Sensornetzwerks sind. \cite{SecurityIssuesWireless} beschrieben einige der möglichen Angriffe, darunter Jamming, Manipulationen, Sybil, Flooding und einige andere Arten von Angriffen.
+    \item \textbf{Cloud Computing Abuse:} Die gemeinsam genutzten Ressourcen können Sicherheitsbedrohungen wie Man-in-Middle-Angriffe (MITM), Phishing usw. ausgesetzt werden. Die Cloud Security Alliance (CSA) betont Gefahren wie Datenverlust, Konten übernahmen, die Verwendung von gemeinsam genutzten Computern im großen Stil usw. \cite{SecurityCloudComputing} beschreibt diese und andere Probleme näher.
+\end{itemize}
+    \vspace{0.5em}
+}
+
+%%% Conclusion %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{\textsf{CONCLUSION}}{name=conclusion, column=0, span=2, below=security}{
+    \vspace{0.5em}
+    Das IoT wird immer größer und wird jeden Teil unseres Lebens beeinflussen. Es reicht von automatisierten Häusern bis hin zur Überwachung der Gesundheit und der Umwelt. Wir diskutierten zukünftige Anwendungen und eine sechsschichtige Architektur für ihre Verwendung. Und die damit verbundenen Sicherheitsbedrohungen. Die Entwicklung von IoT benötigt Lösungen für seine Sicherheits- und Datenschutzbedrohungen.
+    \vspace{0.5em}
+}
+
+%%% Architecture figure %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{\textsf{Six-Layered Architecture of IoT}}{name=architectureFigure, column=0, span=1, below=abstract, above=applications}{
+    \vspace{0.5em}
+    \begin{center}
+        \begin{tikzpicture}
+            [node distance={13mm},thick, main/.style = {draw,rectangle,minimum size=22, minimum width=160, inner sep=1pt}] 
+            \node[main] (CodingLayer) {\textbf{Coding Layer}};
+            \node[main] (PerceptionLayer) [below of=CodingLayer] {\textbf{Perception Layer}};
+            \node[main] (NetworkLayer) [below of=PerceptionLayer] {\textbf{Network Layer}};
+            \node[main] (MiddlewareLayer) [below of=NetworkLayer] {\textbf{Middleware Layer}};
+            \node[main] (ApplicationLayer) [below of=MiddlewareLayer] {\textbf{Application Layer}};
+            \node[main] (BusinessLayer) [below of=ApplicationLayer] {\textbf{Business Layer}};
+        
+            \path[->] (CodingLayer) edge (PerceptionLayer);
+            \path[->] (PerceptionLayer) edge (NetworkLayer);
+            \path[->] (NetworkLayer) edge (MiddlewareLayer);
+            \path[->] (MiddlewareLayer) edge (ApplicationLayer);
+            \path[->] (ApplicationLayer) edge (BusinessLayer);
+        \end{tikzpicture}
+    \end{center}
+}
+
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{\textsf{REFERENCES}}{name=references, column=0, span=3, above=bottom, below=applications}{
+   \vspace{-0.2em}
+   \begin{small}
+  \renewcommand{\refname}{\vspace{-0.8em}}
+  \setlength{\parskip}{0cm}
+  \setlength{\bibsep}{0.0cm}
+  \bibliographystyle{unsrt}
+  \bibliography{references}
+    \end{small}
+}
+
+\end{poster}
+
+\end{document}
